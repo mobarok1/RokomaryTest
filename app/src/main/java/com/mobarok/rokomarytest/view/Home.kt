@@ -15,8 +15,8 @@ import com.mobarok.rokomarytest.viewModel.NewArrivalViewModel
 
 class Home : AppCompatActivity() {
     var token : String? = null
-    var newArrivalAdapter =  NewArrivalAdapter(arrayListOf());
-    var exploreAdapter =  ExploreAdapter(arrayListOf());
+    var newArrivalAdapter =  NewArrivalAdapter(arrayListOf(),this);
+    var exploreAdapter =  ExploreAdapter(arrayListOf(),this);
     lateinit var newArrivalRecyclerView : RecyclerView
     lateinit var exploreRecyclerView : RecyclerView
     private lateinit var viewModelNewArrival : NewArrivalViewModel;

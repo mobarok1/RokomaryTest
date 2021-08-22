@@ -1,5 +1,8 @@
 package com.mobarok.rokomarytest.model
-data class BookModel (
+
+import java.io.Serializable
+
+data class BookModel(
     val id : Int?,
     val position : Int?,
     val name_bn : String?,
@@ -13,4 +16,4 @@ data class BookModel (
     val is_newarrival : Boolean ?,
     val lang : String?,
     val image_path : String?,
-)
+): Serializable

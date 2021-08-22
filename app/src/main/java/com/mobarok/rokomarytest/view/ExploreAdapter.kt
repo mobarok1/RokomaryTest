@@ -1,5 +1,7 @@
 package com.mobarok.rokomarytest.view
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +13,7 @@ import com.mobarok.rokomarytest.model.BookModel
 import com.mobarok.rokomarytest.util.loadImage
 
 
-class ExploreAdapter(var books:ArrayList<BookModel>): RecyclerView.Adapter<ExploreAdapter.NewArrivalViewHolder>() {
+class ExploreAdapter(var books:ArrayList<BookModel>,var context:Context): RecyclerView.Adapter<ExploreAdapter.NewArrivalViewHolder>() {
 
     fun updateCountries(newBooks:List<BookModel>){
         books.clear();
@@ -22,6 +24,7 @@ class ExploreAdapter(var books:ArrayList<BookModel>): RecyclerView.Adapter<Explo
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_explore, parent, false)
 
+        context = parent.context
         return NewArrivalViewHolder(view)
     }
     override fun onBindViewHolder(holder: NewArrivalViewHolder, position: Int) {
@@ -29,6 +32,12 @@ class ExploreAdapter(var books:ArrayList<BookModel>): RecyclerView.Adapter<Explo
         holder.name.text = books[position].name_en
         holder.author.text = books[position].author_name_bn
         holder.price.text = "%.2f".format (books[position].price)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, BookDetails::class.java)
+            intent.putExtra("book",books[position])
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = books.size
