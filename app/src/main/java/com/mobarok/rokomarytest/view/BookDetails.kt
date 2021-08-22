@@ -30,9 +30,9 @@ class BookDetails : AppCompatActivity() {
         image = findViewById(R.id.imageView)
 
         name.text = book.name_en;
-        price.text = "%.2f".format (book.price)
+        price.text = "Price : "+ ("%.2f".format (book.price))
         details.text = book.summary;
-        author.text = book.author_name_bn;
+        author.text = "Author "+book.author_name_bn;
         image.loadImage(book.image_path);
     }
 }
