@@ -9,8 +9,6 @@ import retrofit2.http.POST
 import retrofit2.http.FormUrlEncoded
 
 
-
-
 interface LoginApi {
     @FormUrlEncoded
     @POST("auth/token/")

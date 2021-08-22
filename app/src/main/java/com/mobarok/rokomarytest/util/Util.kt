@@ -15,7 +15,7 @@ fun getProgressDrawable(context : Context) : CircularProgressIndicator{
     }
 }
 
-fun ImageView.loadImage(uri:String?,progressIndicator : CircularProgressIndicator?){
+fun ImageView.loadImage(uri: String?){
     val options = RequestOptions()
         .error(R.mipmap.ic_launcher)
         .circleCrop()

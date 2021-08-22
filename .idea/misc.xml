@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/item_arrival_book.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/item_explore.xml" value="0.33" />
       </map>
     </option>
   </component>

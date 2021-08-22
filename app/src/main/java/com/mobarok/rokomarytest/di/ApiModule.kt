@@ -1,5 +1,7 @@
 package com.mobarok.rokomarytest.di
 
+import com.mobarok.rokomarytest.model.BookApi
+import com.mobarok.rokomarytest.model.BookService
 import com.mobarok.rokomarytest.model.LoginApi
 import com.mobarok.rokomarytest.model.LoginService
 import dagger.Module
@@ -19,12 +21,28 @@ class ApiModule {
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+
             .build()
             .create(LoginApi::class.java)
+    }
+
+    @Provides
+    fun provideBookApi():BookApi{
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build()
+            .create(BookApi::class.java)
     }
     @Provides
     fun provideLoginService(): LoginService{
         return LoginService()
+    }
+
+    @Provides
+    fun provideBookService(): BookService{
+        return BookService()
     }
 
     @Provides
