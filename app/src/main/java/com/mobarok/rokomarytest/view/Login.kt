@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.mobarok.rokomarytest.R
+import com.mobarok.rokomarytest.util.SharedPrefManager
 import com.mobarok.rokomarytest.viewModel.LoginViewModel
 import com.mobarok.rokomarytest.viewModel.RegisterViewModel
 
@@ -53,6 +54,13 @@ class Login : AppCompatActivity() {
         viewModel.responseLogin.observe(this, Observer {
                 response-> response?.let{
             cardView.visibility = View.VISIBLE
+            SharedPrefManager.with(this).save("refresh",response.refresh);
+            SharedPrefManager.with(this).save("access",response.access);
+
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+            finish()
+
             print("mmmm" + response.access);
         }
         })

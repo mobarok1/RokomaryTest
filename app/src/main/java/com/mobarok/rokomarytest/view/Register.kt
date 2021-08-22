@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.mobarok.rokomarytest.R
+import com.mobarok.rokomarytest.util.SharedPrefManager
 import com.mobarok.rokomarytest.viewModel.RegisterViewModel
 
 class Register : AppCompatActivity() {
