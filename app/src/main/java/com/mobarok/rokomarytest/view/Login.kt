@@ -67,6 +67,7 @@ class Login : AppCompatActivity() {
 
         viewModel.loginError.observe(this,Observer{
                 isError-> isError?.let{
+            cardView.visibility = View.INVISIBLE
             if(isError)
                 Toast.makeText(applicationContext,"Error found", Toast.LENGTH_LONG).show()
             else{
@@ -80,6 +81,8 @@ class Login : AppCompatActivity() {
                 loader.visibility = if(isLoading) View.VISIBLE else View.GONE
                 if(it) {
                     cardView.visibility = View.GONE
+                }else{
+                    cardView.visibility = View.VISIBLE
                 }
             }
         })

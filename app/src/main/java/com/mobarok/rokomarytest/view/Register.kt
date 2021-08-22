@@ -75,6 +75,9 @@ class Register : AppCompatActivity() {
                 loader.visibility = if(isLoading) View.VISIBLE else View.GONE
                 if(it) {
                     cardView.visibility = View.GONE
+                }else{
+                    cardView.visibility = View.VISIBLE
+
                 }
             }
         })
