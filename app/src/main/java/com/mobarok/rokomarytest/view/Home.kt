@@ -39,7 +39,7 @@ class Home : AppCompatActivity() {
             adapter = newArrivalAdapter
         }
         exploreRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(context)
             adapter = exploreAdapter
         }
         viewModelNewArrival.fetchBooks(this)
